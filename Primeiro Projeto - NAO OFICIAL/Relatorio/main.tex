@@ -1,0 +1,348 @@
+% Pacotes que  fazem o sistema pegar, eh como o import do python
+\documentclass[a4paper, 12pt]{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{ragged2e}
+\usetikzlibrary{babel}
+\usetikzlibrary{calc,patterns,angles,quotes}
+
+
+\begin{document} %Comeco do documento
+
+\begin{titlepage} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.75cm]{IFSC_USP.png} % Nome da Imagem 
+
+\end{figure}
+    \begin{center}
+        Universidade de São Paulo \\
+        
+        Instituto de Física de São Carlos \\
+
+
+\vspace{10pt}
+
+        
+        \vspace{85pt}
+        
+        
+         \large\textbf{{Relatório 1}} % Titulo da Pratica 
+        \vspace{160pt}
+        
+    \end{center}
+    
+    \begin{flushright}
+        
+         Stefan Taiguara Couperus Leal 10414866 \\ % Colocar os nomes dos alunos aqui
+    \end{flushright}
+    
+    \begin{center}
+        \vspace{\fill}
+        23 de Fevereiro de 2019 % Onde eu coloco a data
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents    % Posso ativar para ter a tabela de conteudo
+
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+
+%% Notas sobre a correção dos relatórios:
+% i) Explicitar o número de medidas efetuadas; ii) Explicitar a precisão dos instrumentos na seção
+% dos materiais empregados; iii) Discutir, nos resultados, qual dos métodos gerou o melhor
+% resultado, o mais preciso, e indicar possíveis fontes de diferença entre os métodos empregados 
+% que tenham levado às diferenças de precisão observadas;
+
+\justifying
+
+
+Esse projeto apresenta tarefas básicas para o treinamento em programação científica utilizando-se FORTRAN onde
+se faz necessário o uso de funções intrínsecas (LOG, COS, SQRT, ...), comandos (DO, IF, DO WHILE, ...), e operações
+básicas com vetores e matrizes
+
+
+
+\section{Fatoriais e a aproximação de Stirling}
+
+\subsection{Fatoriais e sua respectiva precisão}
+
+Escreva um programa que imprima em um arquivo uma tabela com os fatoriais de todos os inteiros entre
+1 e 30. Verifique e discuta a precisão de seus resultados
+
+\begin{table}[H]
+	\centering
+\begin{tabular}{ c | c } 
+	n	&Fatorial\\ \hline
+	1	&1\\
+	2	&2\\
+	3	&6\\
+	4	&24\\
+	5	&120\\
+	6	&720\\
+	7	&5040\\
+	8	&40320\\
+	9	&362880000\\
+	10	&3628800\\
+	11	&39916800\\
+	12	&479001600\\
+	13	&6,23E+9\\
+	14	&8,72E+10\\
+	15	&1,31E+12\\
+	16	&2,09E+13\\
+	17	&3,56E+14\\
+	18	&6,40E+15\\
+	19	&1,22E+17\\
+	20	&2,43E+18\\
+
+\end{tabular}
+\end{table}
+
+
+\subsection{Logaritmo e Fatorial}
+\label{text:log}
+Escreva agora um programa que imprima em um arquivo uma tabela com os logaritmo dos fatoriais de
+todos os inteiros entre 2 e 30. Novamente, verifique e discuta seus resultados.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c | c  }
+	n &  $Ln \: (n!)$ & n & $Ln \: (n!)$\\ \hline
+	2 &   0.693147182     & 16 &    30.6718597     \\ \hline
+	3 &    1.79175949     & 17 &    33.5050735     \\ \hline
+	4 &    3.17805386     & 18 &    36.3954468     \\ \hline
+	5 &    4.78749180     & 19 &    39.3398857     \\ \hline
+	6 &    6.57925129     & 20 &    42.3356171     \\ \hline
+	7 &    8.52516174     & 21 &    45.3801384     \\ \hline
+	8 &    10.6046028     & 22 &    48.4711800     \\ \hline
+	9 &    12.8018274     & 23 &    51.6066742     \\ \hline
+	10 &    15.1044130     & 24 &    54.7847290     \\ \hline
+	11 &    17.5023079     & 25 &    58.0036049     \\ \hline
+	12 &    19.9872150     & 26 &    61.2617035     \\ \hline
+	13 &    22.5521641     & 27 &    64.5575409     \\ \hline
+	14 &    25.1912212     & 28 &    67.8897400     \\ \hline
+	15 &    27.8992710     & 29 &    71.2570419     \\ \hline
+	\ &      \   & 30  & 74.6582336
+\end{tabular}
+\end{table}
+
+\subsection{Aproximação de Stirling}
+
+Compare os resultados do item \ref{text:log} com a aproximação de Stirling
+
+\begin{equation*} %TODO: Colocar as respectivas referencias
+	ln (n!) \approx  n \:ln (n) - n + \frac{1}{2}\:ln(2 \pi  n)
+\end{equation*}
+
+\begin{table}[H]
+\centering
+
+\begin{tabular}{ c | c | c | c }
+
+	n & Ln(n!) & n & Stirling \\ \hline
+	2 &   0.693147182     & 2 &   0.651806474     \\ \hline
+	3 &    1.79175949     & 3 &    1.76408160     \\ \hline
+	4 &    3.17805386     & 4 &    3.15726328     \\ \hline
+	5 &    4.78749180     & 5 &    4.77084732     \\ \hline
+	6 &    6.57925129     & 6 &    6.56537533     \\ \hline
+	7 &    8.52516174     & 7 &    8.51326370     \\ \hline
+	8 &    10.6046028     & 8 &    10.5941916     \\ \hline
+	9 &    12.8018274     & 9 &    12.7925711     \\ \hline
+	10 &    15.1044130     & 10 &    15.0960836     \\ \hline
+	11 &    17.5023079     & 11 &    17.4947338     \\ \hline
+	12 &    19.9872150     & 12 &    19.9802723     \\ \hline
+	13 &    22.5521641     & 13 &    22.5457535     \\ \hline
+	14 &    25.1912212     & 14 &    25.1852722     \\ \hline
+	15 &    27.8992710     & 15 &    27.8937187     \\ \hline
+	16 &    30.6718597     & 16 &    30.6666527     \\ \hline
+	17 &    33.5050735     & 17 &    33.5001717     \\ \hline
+	18 &    36.3954468     & 18 &    36.3908157     \\ \hline
+	19 &    39.3398857     & 19 &    39.3354988     \\ \hline
+	20 &    42.3356171     & 20 &    42.3314514     \\ \hline
+	21 &    45.3801384     & 21 &    45.3761749     \\ \hline
+	22 &    48.4711800     & 22 &    48.4673958     \\ \hline
+	23 &    51.6066742     & 23 &    51.6030502     \\ \hline
+	24 &    54.7847290     & 24 &    54.7812576     \\ \hline
+	25 &    58.0036049     & 25 &    58.0002708     \\ \hline
+	26 &    61.2617035     & 26 &    61.2584953     \\ \hline
+	27 &    64.5575409     & 27 &    64.5544510     \\ \hline
+	28 &    67.8897400     & 28 &    67.8867645     \\ \hline
+	29 &    71.2570419     & 29 &    71.2541580     \\ \hline
+	30 &    74.6582336     & 30 &    74.6554565
+\end{tabular}
+\end{table}
+Como pode ser visto há uma diferença entre o $ln \: n!$ e a aproximação de Stirling, mas a medida que o número vai aumentando percebe-se que a diferença entre um e outro diminui.
+\subsection{Comparação}
+
+Especificamente, imprima novamente uma tabela com quatro colunas: $n$, $ln \: n!$, $S$ e $ \frac{ln \:n! \: - \: S}{ln \: n!}$. Discuta seus resultados.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c}
+	n & $n!$ & $Ln(n!)$ & Stirling & Relação de Equivalência \\ \hline
+	2 & 2 &   0.693147182     &   0.651806474     &    4.13407087E-02 \\ \hline
+	3 & 6 &    1.79175949     &    1.76408160     &    2.76778936E-02 \\ \hline
+	4 & 24 &    3.17805386     &    3.15726328     &    2.07905769E-02 \\ \hline
+	5 & 120 &    4.78749180     &    4.77084732     &    1.66444778E-02 \\ \hline
+	6 & 720 &    6.57925129     &    6.56537533     &    1.38759613E-02 \\ \hline
+	7 & 5040 &    8.52516174     &    8.51326370     &    1.18980408E-02 \\ \hline
+	8 & 40320 &    10.6046028     &    10.5941916     &    1.04112625E-02 \\ \hline
+	9 & 362880000 &    12.8018274     &    12.7925711     &    9.25636292E-03 \\ \hline
+	10 & 3628800 &    15.1044130     &    15.0960836     &    8.32939148E-03 \\ \hline
+	11 & 39916800 &    17.5023079     &    17.4947338     &    7.57408142E-03 \\ \hline
+	12 & 479001600 &    19.9872150     &    19.9802723     &    6.94274902E-03 \\ \hline
+	13 & 6227020800 &    22.5521641     &    22.5457535     &    6.41059875E-03 \\ \hline
+	14 & 87178289200 &    25.1912212     &    25.1852722     &    5.94902039E-03 \\ \hline
+	15 & 1307674280000 &    27.8992710     &    27.8937187     &    5.55229187E-03 \\ \hline
+	16 & 20922788500000 &    30.6718597     &    30.6666527     &    5.20706177E-03 \\ \hline
+	17 & 355687415000000 &    33.5050735     &    33.5001717     &    4.90188599E-03 \\ \hline
+	18 & 6402373530000000 &    36.3954468     &    36.3908157     &    4.63104248E-03 \\ \hline
+	19 & 1.21645096E+017 &    39.3398857     &    39.3354988     &    4.38690186E-03 \\ \hline
+	20 & 2.43290202E+018 &    42.3356171     &    42.3314514     &    4.16564941E-03 \\ \hline
+	21 & 5.10909408E+019 &    45.3801384     &    45.3761749     &    3.96347046E-03 \\ \hline
+	22 & 1.12400072E+021 &    48.4711800     &    48.4673958     &    3.78417969E-03 \\ \hline
+	23 & 2.58520174E+022 &    51.6066742     &    51.6030502     &    3.62396240E-03 \\ \hline
+	24 & 6.20448455E+023 &    54.7847290     &    54.7812576     &    3.47137451E-03 \\ \hline
+	25 & 1.55112111E+025 &    58.0036049     &    58.0002708     &    3.33404541E-03 \\ \hline
+	26 & 4.032915E+026 &    61.2617035     &    61.2584953     &    3.20816040E-03 \\ \hline
+	27 & 1.08888704E+028 &    64.5575409     &    64.5544510     &    3.08990479E-03 \\ \hline
+	28 & 3.04888372E+029 &    67.8897400     &    67.8867645     &    2.97546387E-03 \\ \hline
+	29 & 8.84176308E+030 &    71.2570419     &    71.2541580     &    2.88391113E-03 \\ \hline
+	30 & 2.6525289E+032 &    74.6582336     &    74.6554565     &    2.77709961E-03 \\ 
+\end{tabular}
+\end{table}
+
+\hspace{1.5cm}
+
+Aqui pode se comparar as manipulações matemáticas que ocorrem com o n, assim como ter uma visão melhor da relação de equivalência entre o uso do Stirling ou do $Ln \: n!$. Fazendo esta comparação percebe-se que a relação de equivalência se aproxima para números maiores.
+
+\hspace{0.5cm}
+
+\section{Série de Taylor para o cosseno}
+
+A expansão em série de Taylor de uma função $f_(x)$ ao redor de $x_0$ é dada por
+
+\begin{equation*}
+	f(x) = \sum_{n = 0}^{\infty} \frac{1}{n!} f^{(n)} (x_0) (x - x_0)^{n} = f(x_0) + f^{'}(x_0)(x-x_0) + \frac{1}{2!}f^{''}(x_0)(x-x_0)^2 + ...
+\end{equation*}
+
+\subsection{Calculo do cos(x) com taylor}
+Escreva um programa FORTRAN que calcule o valor de $cos(x)$ 
+com acuracia absoluta e relativa de 
+$10^{-6}$ por meio de 
+sua série de Taylor ao redor de $x_0 = 0$.
+
+\section{Valores médios e desvio padrão}
+
+No arquivo votes.dat há uma uma população de $N = 10^6$ números inteiros $x_i$ , $i = 1$, $...$ , $N$ que designam os votos
+válidos de uma eleição. Há apenas dois candidatos: 0 e 1.
+
+\subsection{Qual o candidato foi eleito?}
+
+Calcule a média aritmética da população $E[x] = \frac{1}{N} \sum_{i = 1}^{N} x_i$. Qual o candidato eleito?
+
+Afim de verificar o ganhador foi feito a média aritmética, para saber quem tinha ganhou é necessário ver se o valor: Se esta acima de 0.5 o candidato 0 ganhou, se esta abaixo o candidato 1 ganhou. Com isso, o candidato 0 ganhou com o valor de 0.348643988.
+
+\begin{equation*}
+	E[x] = 0.348643988
+\end{equation*}
+
+\subsection{Desvio padrão da amostra como um todo}
+
+Calcule a média e o desvio padrão do arquivo inteiro.
+
+\begin{equation*}
+	E[x] = 0.348643988 \pm 0.476481855 
+\end{equation*}
+
+
+\subsection{Seleção aleatória de amostras}
+
+Foi selecionado 6 amostras aleatorias do arquivo "votes.dat" afim de analisar as diferenças.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c | c}
+	Media	& Desvio	\\ \hline
+	0.34999999999999998      	&  0.48066137096229522\\
+	0.37000000000000000      	&  0.48665940218737574\\
+	0.41999999999999998      	&  0.49783774891265969\\
+	0.32000000000000001      	&  0.46992799792342965\\
+	0.29999999999999999      	&  0.46155205885176470\\
+	0.34999999999999998      	&  0.48066137096229539\\	
+	\end{tabular}
+\end{table}
+
+\subsection{Variações da Amostragem em $10^n$}
+
+Varie o tamanho da amostra e analise as diferenças.
+
+\begin{equation*}
+	s_m = \frac{\sigma}{\sqrt{M}}
+\end{equation*}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c }
+	$s_m$ & Magnitude &  Media \  \\ \hline
+	15.599145086561631       &           10   &   0.29999999999999999      $ \pm$  0.49328828623162474       \\ \hline
+	4.4702043882497478       &          100   &   0.27000000000000002      $ \pm$   0.44702043882497478       \\ \hline
+	1.5023127220466526       &         1000   &   0.34300000000000003      $ \pm$  0.47507298738545606       \\ \hline
+	0.47775462690000353       &        10000   &   0.35239999999999999      $ \pm$ 0.47775462690000353       \\ \hline
+	0.15080731222677329       &       100000   &   0.34975000000000001      $ \pm$  0.47689457434020116       \\ 
+
+\end{tabular}
+\end{table} 
+
+% TODO: Traçar um grafico do aumento da magnitude e o decaimento da queda
+
+\section{Organize uma lista}
+
+Todas as operações serão feitas num vetor, este vetor pegou os dados do arquivo "Rnumber.dat"
+
+\subsection{Procure o maior numero no arquivo}
+
+Foi colocado todos os dados do arquivo "Rnumber.dat" num vetor, depois foi percorrido o vetor a procura do maior valor do arquivo.
+
+Maior Numero:
+
+\begin{equation*}
+	N = 0.99998464295640588
+\end{equation*}
+
+Em seguida foi feito um program utilizando do bubble sort para organizar este vetor. 
+
+\begin{table}
+\centering
+
+\begin{tabular}{c | c}
+	Dados & 100,000 \\ \hline
+	Operações & 2,498,335,385 \\
+\end{tabular}
+\end{table}
+
+Linhas no arquivo: 100,000
+
+Operações realizadas: 2,498,335,385
+
+
+
+\section{Autovalor e Autovetor}
+
+Método da potência para o cálculo do autovalor/autovetor dominante
+\end{document}

@@ -1,0 +1,9 @@
+set xlabel "Resultado"
+set ylabel "Iterações"
+
+set logscale x
+
+set terminal png
+set output "resultado_iterações.png" 
+
+plot "data.dat" using 1:2 t ""
