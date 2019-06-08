@@ -1,0 +1,15 @@
+set grid
+
+set ylabel "Precisao"
+set xlabel "Razão de  1 /h"
+set logscale y
+
+set terminal png
+
+set title "ds_3pts2"
+set output "ds_3pts2.png"
+
+f(x) = log(a * x + b)
+fit f(x) 'ds_3pts.dat' u 1:2 via a, b
+
+plot f(x), 'ds_3pts.dat'   t ""

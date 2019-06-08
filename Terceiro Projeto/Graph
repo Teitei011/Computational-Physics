@@ -1,0 +1,16 @@
+set grid
+set xlabel "Tempo (s)"
+set ylabel "Velocidade (m/s)"
+#set title "Velocidade x Tempo para diferentes areas"
+
+set logscale x # TODO: Pode colocar com na log-scale
+
+set terminal png
+set output "asdhgjds.png"
+
+#set terminal pdf
+#set output "grafB.pdf"
+
+#plot "velA_out.dat" t "A = 0", "A_1_4_out.dat" t "A = 1/4", "A_1_out.dat" t "A = 1", "A_2_out.dat" t "A = 2"
+
+plot "velA_out.dat" t ""

@@ -1,0 +1,205 @@
+
+
+*******************************************************************************
+Fri May  3 19:37:32 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b *x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2553302582e+02   0.00e+00  3.14e+00    1.000000e+00   1.000000e+00
+  10 3.8314643226e+00  -4.80e-01  3.14e-10   -9.684858e-03   1.020427e+00
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 3.83146
+rel. change during last iteration : -4.79547e-06
+
+degrees of freedom    (FIT_NDF)                        : 248
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.124296
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0154495
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.00968486      +/- 0.01139      (117.6%)
+b               = 1.02043          +/- 0.1852       (18.15%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.004  1.000 
+
+
+*******************************************************************************
+Fri May  3 19:38:52 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b *x + c)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri May  3 19:38:59 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b *x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3642857179e+02   0.00e+00  2.41e+00    1.000000e+00   1.000000e+00   1.000000e+00
+  14 3.8314030030e+00  -1.82e-01  2.41e-02   -9.653944e-03   1.022013e+00   8.992255e-02
+
+After 14 iterations the fit converged.
+final sum of squares of residuals : 3.8314
+rel. change during last iteration : -1.8197e-06
+
+degrees of freedom    (FIT_NDF)                        : 247
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.124546
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0155118
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.00965394      +/- 0.01139      (118%)
+b               = 1.02201          +/- 0.3784       (37.03%)
+c               = 0.0899225        +/- 2.299        (2557%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.064  1.000 
+c               0.085 -0.870  1.000 
+
+
+*******************************************************************************
+Fri May  3 19:40:09 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b *x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3660625719e+02   0.00e+00  2.41e+00    1.000000e+00   1.000000e+00   1.000000e+00
+   8 3.8400989461e+00  -1.60e-01  2.41e-02   -7.785442e-03   8.848474e-01   9.543777e-01
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 3.8401
+rel. change during last iteration : -1.59795e-06
+
+degrees of freedom    (FIT_NDF)                        : 247
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.124687
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.015547
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.00778544      +/- 0.01111      (142.7%)
+b               = 0.884847         +/- 0.5099       (57.63%)
+c               = 0.954378         +/- 3.164        (331.5%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.029  1.000 
+c              -0.002 -0.890  1.000 
+
+
+*******************************************************************************
+Fri May  3 19:40:48 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2561254457e+02   0.00e+00  3.14e+00    1.000000e+00   1.000000e+00
+   6 3.8352306818e+00  -9.63e-01  3.14e-04   -1.010698e-02   1.015673e+00
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 3.83523
+rel. change during last iteration : -9.63177e-06
+
+degrees of freedom    (FIT_NDF)                        : 248
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.124357
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0154646
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.010107        +/- 0.01139      (112.7%)
+b               = 1.01567          +/- 0.1774       (17.47%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.004  1.000 
+
+
+*******************************************************************************
+Fri May  3 19:41:02 2019
+
+
+FIT:    data read from "exerC2_out.dat"
+        format = z
+        x range restricted to [0.00000 : 10.0000]
+        #datapoints = 250
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b**0.5*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2561254457e+02   0.00e+00  1.62e+00    1.000000e+00   1.000000e+00
+   8 3.8350789810e+00  -5.21e-01  1.62e-04   -1.015207e-02   1.040913e+00
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 3.83508
+rel. change during last iteration : -5.20684e-06
+
+degrees of freedom    (FIT_NDF)                        : 248
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.124354
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.015464
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.0101521       +/- 0.01139      (112.2%)
+b               = 1.04091          +/- 0.3608       (34.66%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.005  1.000 

@@ -1,0 +1,15 @@
+set grid
+
+set ylabel "Erro"
+set xlabel "Valor de n"
+
+set xrange[0:15]
+set logscale y
+
+set title "dta_5pts"
+
+
+set terminal png
+set output "dta_5pts.png"
+
+plot "data.dat" t ""

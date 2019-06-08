@@ -1,0 +1,12 @@
+set grid
+
+set title "Variação de theta pelo tempo "
+set xlabel "Tempo (s)"
+set ylabel "Theta (rad)"
+
+set xrange[0:10]
+
+set terminal png
+set output "ThetaEulerCromer.png"
+
+plot "exerC1_out.dat" t "Euler", "exerC2_out.dat" t "Euler-Cromer"

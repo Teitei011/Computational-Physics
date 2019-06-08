@@ -1,0 +1,13 @@
+set grid
+
+set title "Energia pelo Tempo"
+set xlabel "Tempo (s)"
+set ylabel "Energia"
+
+set xrange[0:10]
+#set yrange[-0.5:0.5]
+
+set terminal png
+set output "EnergyEulerCromer.png"
+
+plot "exerC1_Energy.dat" t "Euler", "exerC2_Energy.dat" t "Euler-Cromer"

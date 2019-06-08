@@ -1,0 +1,25 @@
+set grid
+set ylabel "Theta"
+set xlabel "Tempo(s)"
+
+# set terminal png
+# set output "grafC.png"
+
+set terminal pdf
+set output "grafC.pdf"
+
+set xrange[0:10]
+
+#0.1745329252
+
+f(x) =  .1745329252 * sin(10**0.5 * x + 3.141592653589 / 2)
+
+set multiplot layout 2,1 rowsfirst
+
+set label 1 ''  at graph 0.92,0.9 font ',8'
+plot "exerC1_out.dat" t "Euler" lt rgb "black", "exerC2_out.dat" t "Euler-Cromer" lt rgb "blue", f(x) t "Função Exata" lt rgb "red"
+
+set ylabel "Energia (J)"
+set xlabel "Tempo(s)"
+set label 1 '' at graph 0.92,0.9 font ',8'
+plot "exerC1_Energy.dat" t "Euler", "exerC2_Energy.dat" t "Euler-Cromer"
