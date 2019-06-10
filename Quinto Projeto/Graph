@@ -1,0 +1,16 @@
+set grid
+
+
+set xlabel "x"
+set ylabel "G(x)"
+#
+set yrange[0:0.2]
+set xrange[0:0.2]
+
+set terminal png
+set output "teste.png"
+
+f(x) = 1. * x * (1 - x)
+g(x) = x
+
+plot f(x), "exponential.dat" using 1:2 lt rgb "black", "exponential.dat" using 4:3 lt rgb "red"

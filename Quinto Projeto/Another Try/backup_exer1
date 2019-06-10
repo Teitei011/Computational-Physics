@@ -1,0 +1,19 @@
+! Calculando a distancia
+ do i = 2, N, 1
+  ! Parte A
+  x1  = r * x0  * (1.0d0 - x0)
+  x1t = r * x0t * (1.0d0 - x0t)
+
+  write(1, *) i,  x1, x1t, abs(x1t - x1)  ! TODO: ELe nao esta causando o crescimento exponential
+
+
+  ! Parte B
+  x1d  = r  * (1.0d0 - 2.d0 * x0d)
+  lambda = lambda + dlog(abs(x1d))
+
+  x0  = x1
+  x0t = x1t
+  x0d = x1d
+
+
+ enddo

@@ -1,0 +1,9 @@
+set grid
+
+set ylabel "G(x)"
+set xlabel "lambda"
+
+set terminal png
+set output "teste.png"
+
+plot "lambdaVariation.dat" with dots t ""

@@ -1,0 +1,10 @@
+
+1 ) Na hora de enviar o arquivo .tex, preciso enviar todas as imagens que foram utilizadas para compilar o arquivo? Pq senao quando o professor compilar ele só vai receber warnings
+
+Questão 3:
+
+* Nao esta causando o crescimento exponential que eu esperava
+* A equação na linha 36 deve estar errado. Tenho que arrancar xod, mas quando faço isso ele chega a NaN
+* Na linha 48 ele pede o lambda0, só sei como conseguir fazer um fit com gnuplot. Mas o programa pede para calcular inside do programa.
+ 
+

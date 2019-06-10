@@ -1,0 +1,15 @@
+set grid
+
+
+set xlabel "x"
+set ylabel "G(x)"
+
+set terminal png
+set output "r=4_0.png"
+
+f(x) = 4. * x * (1 - x)
+g(x) = x
+
+plot f(x) t "", g(x) t "", "trj.dat" using 2:3 with lines lt rgb "blue"  t "r = 4.0"
+
+#plot f(x), "exponential.dat" using 1:2 lt rgb "black", "exponential.dat" using 4:3 lt rgb "red"
