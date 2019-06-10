@@ -1,0 +1,31 @@
+
+
+*******************************************************************************
+Mon May  6 13:21:23 2019
+
+
+FIT:    data read from "decai_out.dat"
+        format = z
+        x range restricted to [0.00000 : *]
+        #datapoints = 1001
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = No * exp( -lambda * x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   No            lambda       
+   0 3.0878774950e+09   0.00e+00  1.94e-01    1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 13 out of 1001
+x               = 4137.47        
+z               = 4748           
+
+Current set of parameters
+=========================
+No              = 4137.47        
+lambda          = -5976.44       
+
+BREAK: Undefined value during function evaluation

@@ -1,0 +1,8 @@
+set grid
+
+set terminal png
+set output "solar_system.png"
+
+g(x) = 0
+
+plot "trajA1_out.dat" using 2:3 t "", g(x) lt rgb "red" lw 5
